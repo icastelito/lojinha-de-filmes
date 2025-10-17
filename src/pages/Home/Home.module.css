@@ -1,0 +1,113 @@
+.home {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f5f5f5, #ffffff);
+}
+
+.content {
+  padding: 2rem 0 40px;
+}
+
+.errorContainer {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.errorMessage {
+  font-size: 1.1rem;
+  color: #c62828;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #ffebee;
+  border-radius: 8px;
+  border-left: 4px solid #c62828;
+}
+
+.retryButton {
+  background: #E50914;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.retryButton:hover {
+  background: #b8070f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
+}
+
+.titleContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.resultCount {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding-bottom: 30px;
+  }
+
+  .errorContainer {
+    margin: 30px 20px;
+    padding: 15px;
+  }
+
+  .errorMessage {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .retryButton {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .titleContainer {
+    padding: 0 15px 15px;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .resultCount {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding-bottom: 20px;
+  }
+
+  .titleContainer {
+    padding: 0 10px 10px;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .resultCount {
+    font-size: 0.85rem;
+  }
+}
