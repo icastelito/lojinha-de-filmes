@@ -1,409 +1,261 @@
 # 🎬 Lojinha de Filmes
 
-E-commerce de filmes desenvolvido com React + TypeScript + Vite + Tailwind CSS + ShadCN UI para o teste técnico da DOT Digital Group.
+Um e-commerce completo de filmes que desenvolvi durante um processo seletivo para vaga de desenvolvedor front-end. O projeto simula uma loja virtual onde você pode navegar por milhares de filmes, adicionar aos favoritos, montar seu carrinho e finalizar a compra.
 
-## 🚀 Status do Projeto
+A ideia era criar uma experiência fluida e moderna, então apostei em tecnologias atuais e foquei bastante na UX - desde o infinite scroll para não precisar ficar clicando em "próxima página", até animações suaves que deixam a navegação mais agradável.
 
-**Fase Atual:** FASE 8 - POLIMENTO ✅
+## ✅ Projeto Finalizado
 
-### ✅ Concluído
-- [x] FASE 1: Configuração Inicial
-- [x] FASE 2: Integração com API TMDb
-  - [x] Serviço de API configurado
-  - [x] Endpoints implementados (popular, search, details)
-  - [x] Serviço ViaCEP implementado
-  - [x] Helpers (getImageUrl, generatePrice)
-- [x] FASE 3: Desenvolvimento da Página Inicial
-  - [x] Header com logo e contador do carrinho
-  - [x] Barra de pesquisa com debounce
-  - [x] Grid responsivo de filmes
-  - [x] MovieCard com botões de adicionar ao carrinho e favoritar
-  - [x] Loading states
-  - [x] Context API (Cart e Favorites)
-  - [x] Persistência no localStorage
-  - [x] **Infinite Scroll com Lazy Loading** 🆕
-- [x] FASE 4: Carrinho Lateral
-  - [x] Sidebar animada (Radix UI Sheet)
-  - [x] Adicionar/remover itens
-  - [x] Controle de quantidade
-  - [x] Cálculo automático de subtotal e total
-  - [x] Animações suaves (700ms)
-- [x] FASE 5: Sistema de Favoritos
-  - [x] Context API para favoritos
-  - [x] Sidebar de favoritos
-  - [x] Adicionar ao carrinho diretamente dos favoritos
-  - [x] Persistência no localStorage
-- [x] FASE 6: Checkout
-  - [x] Formulário completo
-  - [x] Validações (email, CPF, CEP, telefone, nome)
-  - [x] Máscaras de formatação
-  - [x] Integração ViaCEP automática
-  - [x] Resumo do pedido
-- [x] FASE 7: Modal de Sucesso
-  - [x] Dialog animado
-  - [x] Confirmação de pedido
-  - [x] Limpeza do carrinho
-- [x] FASE 8: Polimento
-  - [x] Responsividade completa (mobile-first)
-  - [x] Header adaptativo
-  - [x] Infinite Scroll implementado
-  - [x] Animações e transições
+Todas as funcionalidades foram implementadas e o projeto está pronto para uso!
 
-## 🛠️ Tecnologias Utilizadas
+## 🎯 O que aprendi nesse projeto
+
+Esse foi um projeto bem desafiador e aprendi bastante coisa no caminho:
+
+- **Integração com APIs externas**: Trabalhei com a API do TMDb (The Movie Database) para buscar os filmes e a ViaCEP para autocompletar endereços
+- **Infinite Scroll**: Implementei carregamento progressivo de conteúdo, o que foi um desafio interessante de performance
+- **Validações complexas**: Desde validar CPF com dígitos verificadores até aplicar máscaras em tempo real
+- **State Management**: Usei Context API de forma estruturada, com persistência em localStorage
+- **Componentização**: Separei tudo em componentes reutilizáveis seguindo as boas práticas do React
+- **TypeScript**: Todo o código é tipado, o que ajudou muito a evitar bugs
+
+## 🛠️ Stack Completa
 
 ### Core
-- **React 18** - Biblioteca JavaScript
-- **TypeScript** - Superset tipado do JavaScript
-- **Vite** - Build tool moderna e rápida
+- **React 19.1** - A base de tudo, com hooks e Context API
+- **TypeScript** - Para deixar o código mais seguro e manutenível
+- **Vite** - Build tool que é absurdamente rápida comparada ao webpack
+- **React Router DOM** - Navegação entre páginas
 
 ### Estilização
-- **Tailwind CSS** - Framework CSS utility-first
-- **ShadCN UI** - Componentes reutilizáveis
-- **Radix UI** - Componentes acessíveis (Dialog, Sheet, Separator)
-- **tailwindcss-animate** - Animações suaves
-- **Lucide React** - Biblioteca de ícones
+- **Tailwind CSS** - Não costumo escrever CSS puro mais, o Tailwind agilizou demais
+- **ShadCN UI** - Componentes prontos e acessíveis que customizei para o projeto
+- **Radix UI** - Base dos componentes (Dialog, Sheet, Separator)
+- **Lucide React** - Ícones modernos e leves
+- **class-variance-authority (CVA)** - Gerenciar variantes de componentes ficou bem mais fácil
 
-### State Management
-- **Context API** - Gerenciamento de estado global
-- **localStorage** - Persistência de dados
+### Utilitários & Libs
+- **Axios** - Para fazer as requisições HTTP
+- **React Input Mask** - Máscaras nos campos do formulário (CPF, telefone, CEP)
+- **clsx + tailwind-merge** - Unir classes CSS de forma condicional
 
-### APIs e HTTP
-- **Axios** - Cliente HTTP
-- **TMDb API** - Base de dados de filmes
-- **ViaCEP API** - Consulta de CEP
+### APIs Consumidas
+- **TMDb API** - Base de dados com +1 milhão de filmes e séries
+- **ViaCEP** - Busca de endereço por CEP
 
-### Navegação
-- **React Router DOM** - Roteamento client-side
+### Ferramentas de Dev
+- **ESLint** - Manter o código padronizado
+- **PostCSS + Autoprefixer** - Compatibilidade CSS entre browsers
+- **Jest + React Testing Library** - Testes unitários e de integração
+- **MSW (Mock Service Worker)** - Mockar APIs nos testes
 
-### Utilitários
-- **class-variance-authority (CVA)** - Gerenciamento de variantes de componentes
-- **clsx** - Utilitário para classes condicionais
-
-## ✨ Funcionalidades Principais
+## ✨ Funcionalidades
 
 ### 🎥 Catálogo de Filmes
-- ✅ Listagem de filmes populares do TMDb
-- ✅ **Infinite Scroll** - Carregamento automático ao rolar a página
-- ✅ **Lazy Loading** - Otimização de performance
-- ✅ Busca em tempo real com debounce (500ms)
-- ✅ Exibição de gêneros
-- ✅ Preços fictícios baseados em popularidade
-- ✅ Loading states e tratamento de erros
+- Listagem de filmes populares direto da base do TMDb
+- **Infinite Scroll** - conforme você vai rolando, os filmes vão carregando automaticamente (bem melhor que ficar clicando em botão de "próxima página")
+- Busca em tempo real com debounce de 500ms (para não fazer requisição a cada letra digitada)
+- Cada filme mostra: poster, título, nota, gêneros e preço
+- Skeleton loading enquanto carrega (aquele efeito de placeholder cinza)
+- Preços fictícios gerados baseados na popularidade do filme
 
 ### 🛒 Carrinho de Compras
-- ✅ Sidebar animada que desliza da direita (700ms)
-- ✅ Adicionar/remover filmes
-- ✅ Controle de quantidade por item
-- ✅ Cálculo automático de subtotal e total
-- ✅ Contador visual no header
-- ✅ Persistência entre sessões (localStorage)
+- Sidebar que desliza suavemente da direita (700ms de animação)
+- Adicionar e remover filmes
+- Aumentar/diminuir quantidade de cada item
+- Cálculo automático do total
+- Contador visual no header mostrando quantos itens tem
+- Tudo salvo no localStorage (se fechar o navegador e abrir, seus itens ainda estarão lá)
 
 ### ❤️ Sistema de Favoritos
-- ✅ Adicionar/remover favoritos
-- ✅ Sidebar dedicada para favoritos
-- ✅ Adicionar ao carrinho diretamente dos favoritos
-- ✅ Indicador visual nos cards
-- ✅ Contador no header
-- ✅ Persistência no localStorage
+- Marcar filmes como favoritos (aquele coraçãozinho clássico)
+- Sidebar exclusiva para ver seus favoritos
+- Pode adicionar ao carrinho diretamente dos favoritos
+- Contador no header
+- Também persiste no localStorage
 
-### 💳 Checkout
-- ✅ Formulário completo com validações
-- ✅ Máscaras automáticas (CPF, telefone, CEP)
-- ✅ Busca automática de endereço por CEP (ViaCEP)
-- ✅ Validação de CPF com dígitos verificadores
-- ✅ Resumo do pedido em tempo real
-- ✅ Modal de confirmação animado
+### 💳 Página de Checkout
+- Formulário completo com todos os campos necessários
+- Máscaras automáticas em CPF, telefone e CEP (digita e já formata bonitinho)
+- Validação de CPF real (com dígitos verificadores e tudo)
+- Busca automática de endereço quando você digita o CEP (integração com ViaCEP)
+- Resumo do pedido mostrando todos os itens e total
+- Modal de sucesso super bacana quando finaliza a compra
 
 ### 📱 Responsividade
-- ✅ Layout mobile-first
-- ✅ Header adaptativo:
-  - **Mobile:** Logo + botões (linha 1), Busca (linha 2)
-  - **Desktop:** Logo (esquerda), Busca (centro), Botões (direita)
-- ✅ Grid responsivo (1 a 4 colunas)
-- ✅ Testes em múltiplos dispositivos
+- Funciona perfeitamente em celular, tablet e desktop
+- Header se adapta conforme o tamanho da tela:
+  - **Mobile**: Logo e botões na primeira linha, busca na segunda
+  - **Desktop**: Logo à esquerda, busca no centro, botões à direita
+- Grid de filmes vai de 1 coluna (mobile) até 4 colunas (desktop grande)
+- Testei em vários tamanhos de tela para garantir que ficou bom
 
-## ⚙️ Configuração e Instalação
+## ⚙️ Como rodar o projeto
 
-### Pré-requisitos
+### Você vai precisar de:
 
-- Node.js 18+ instalado
-- npm ou yarn
-- Conta no TMDb para obter API Key
+- Node.js versão 18 ou superior
+- npm (geralmente já vem com o Node)
+- Uma conta gratuita no TMDb para pegar a API Key
 
-### Passo a Passo
+### Passo a passo:
 
-1. **Clone o repositório**
+**1. Clone o repositório**
 ```bash
-git clone [URL_DO_REPOSITORIO]
+git clone https://github.com/icastelito/lojinha-de-filmes.git
 cd lojinha-de-filmes
 ```
 
-2. **Instale as dependências**
+**2. Instale as dependências**
 ```bash
 npm install
 ```
 
-3. **Configure as variáveis de ambiente**
+**3. Configure as variáveis de ambiente**
 
-Copie o arquivo `.env.example` para `.env`:
+Tem um arquivo `.env.example` no projeto. Copie ele e renomeie para `.env`:
 ```bash
 cp .env.example .env
 ```
 
-4. **Obtenha sua API Key do TMDb**
+**4. Pegue sua API Key do TMDb**
 
-   a. Acesse: https://www.themoviedb.org/signup
-   
-   b. Crie uma conta gratuita
-   
-   c. Vá em: https://www.themoviedb.org/settings/api
-   
-   d. Solicite uma API Key (escolha a opção "Developer")
-   
-   e. Copie a API Key (v3 auth)
+É rapidinho:
+- Cria uma conta em: https://www.themoviedb.org/signup
+- Depois vai em: https://www.themoviedb.org/settings/api
+- Solicita uma API Key (escolhe a opção "Developer")
+- Copia a chave que aparece (é a v3)
 
-5. **Configure a API Key no arquivo .env**
+**5. Cole a API Key no arquivo .env**
 
-Abra o arquivo `.env` e cole sua API Key:
+Abre o `.env` e cola sua chave:
 ```env
 VITE_TMDB_API_KEY=sua_chave_aqui
 VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
 VITE_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
 ```
 
-6. **Execute o projeto**
+**6. Roda o projeto**
 ```bash
 npm run dev
 ```
 
-7. **Acesse no navegador**
+**7. Abre no navegador**
 ```
 http://localhost:5173
 ```
 
-## 🧪 Testando a Integração API
+Pronto! Se tudo deu certo, você já tá vendo a lojinha rodando 🎉
 
-Após configurar a API Key e rodar o projeto, você verá uma página de testes que valida:
+## 🧪 Testes
 
-- ✅ Busca de filmes populares
-- ✅ Busca por termo de pesquisa
-- ✅ Detalhes de filmes específicos
-- ✅ Carregamento de imagens
-- ✅ Geração de preços fictícios
-- ✅ Tratamento de erros
+Implementei testes para as partes mais críticas do projeto:
+
+```bash
+# Rodar todos os testes
+npm test
+
+# Rodar em modo watch (útil durante desenvolvimento)
+npm run test:watch
+
+# Ver cobertura de testes
+npm run test:coverage
+```
+
+Os testes cobrem:
+- Validações de formulário (CPF, email, CEP, telefone)
+- Máscaras de formatação
+- Context de carrinho e favoritos
+- Componentes principais
+- Integração com as APIs (usando MSW para mockar)
 
 ## 📁 Estrutura do Projeto
 
 ```
 lojinha-de-filmes/
-├── public/
+├── public/                  # Arquivos estáticos
 ├── src/
-│   ├── components/
-│   │   ├── ApiTest.tsx          # Componente de teste da API
-│   │   ├── Header/
-│   │   │   ├── Header.tsx
-│   │   │   └── Header.module.css
-│   │   ├── SearchBar/
-│   │   │   ├── SearchBar.tsx
-│   │   │   └── SearchBar.module.css
-│   │   ├── MovieCard/
-│   │   │   ├── MovieCard.tsx
-│   │   │   └── MovieCard.module.css
-│   │   ├── MovieGrid/
-│   │   │   ├── MovieGrid.tsx
-│   │   │   └── MovieGrid.module.css
-│   │   └── Loading/
-│   │       ├── Loading.tsx
-│   │       └── Loading.module.css
-│   ├── context/
-│   │   ├── CartContext.tsx      # Gerenciamento do carrinho
-│   │   └── FavoritesContext.tsx # Gerenciamento de favoritos
-│   ├── pages/
-│   │   └── Home/
-│   │       ├── Home.tsx
-│   │       └── Home.module.css
-│   ├── services/
-│   │   ├── api.ts               # Serviço TMDb API (TypeScript)
-│   │   └── viaCep.ts            # Serviço ViaCEP (TypeScript)
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── App.css
-│   └── index.css
-├── .env                          # Variáveis de ambiente (não versionado)
-├── .env.example                 # Exemplo de variáveis
+│   ├── components/          # Todos os componentes React
+│   │   ├── ui/             # Componentes do ShadCN (button, card, dialog, etc)
+│   │   ├── Header/         # Cabeçalho da aplicação
+│   │   ├── SearchBar/      # Barra de busca
+│   │   ├── MovieCard/      # Card de cada filme
+│   │   ├── MovieGrid/      # Grid responsivo
+│   │   ├── Cart/           # Sidebar do carrinho
+│   │   ├── Favorites/      # Sidebar de favoritos
+│   │   └── SuccessModal/   # Modal de confirmação
+│   ├── context/            # Context API
+│   │   ├── CartContext.tsx
+│   │   └── FavoritesContext.tsx
+│   ├── pages/              # Páginas da aplicação
+│   │   ├── Home/
+│   │   └── CheckoutPage/
+│   ├── services/           # Integrações com APIs
+│   │   ├── api.ts         # TMDb API
+│   │   └── viaCep.ts      # ViaCEP API
+│   ├── utils/              # Funções auxiliares
+│   │   ├── validators.ts   # Validações (CPF, email, etc)
+│   │   └── masks.ts       # Máscaras de formatação
+│   ├── hooks/              # Hooks customizados
+│   │   └── useInfiniteScroll.ts
+│   ├── mocks/              # Mocks para testes
+│   │   ├── handlers.ts
+│   │   └── server.ts
+│   └── lib/                # Utilitários do Tailwind
+├── .env                    # Variáveis de ambiente (não sobe pro git)
+├── .env.example           # Exemplo de configuração
 ├── package.json
 └── README.md
 ```
 
-## 🎯 Funcionalidades Implementadas
+## 🐛 Problemas Comuns
 
-### Fase 2 - API TMDb
+**"API Key inválida" ou filmes não carregam**
+- Confere se você copiou a chave certinha no `.env`
+- Tem que ser a API Key v3, não a v4
+- Salva o arquivo e reinicia o servidor (`Ctrl+C` e `npm run dev` de novo)
 
-**Endpoints disponíveis:**
+**"Cannot find module" ou erro de dependências**
+- Roda `npm install` novamente
+- Se persistir, apaga a pasta `node_modules` e o `package-lock.json`, depois `npm install` denovo
 
-1. `getPopularMovies(page)` - Busca filmes populares
-2. `searchMovies(query, page)` - Busca filmes por termo
-3. `getMovieDetails(movieId)` - Obtém detalhes de um filme
-4. `getMovieGenres()` - Lista de gêneros de filmes
+**Página em branco ou não abre**
+- Verifica se a porta 5173 já não tá sendo usada por outro processo
+- Olha o console do terminal, geralmente tem uma mensagem de erro útil
+- Tenta acessar com `http://127.0.0.1:5173` ao invés de `localhost`
 
-**Helpers:**
+## � Reflexões sobre o projeto
 
-- `getImageUrl(path, size)` - Gera URL de imagens do TMDb
-- `generatePrice(popularity)` - Gera preço fictício baseado na popularidade
+Foi um desafio bem legal de fazer. Inicialmente achei que seria mais simples, mas conforme fui implementando, percebi a quantidade de detalhes que fazem diferença: debounce na busca para não sobrecarregar a API, skeleton loading para melhorar a percepção de velocidade, persistência no localStorage para não perder dados ao recarregar...
 
-### Fase 3 - Página Inicial
+O infinite scroll foi particularmente interessante - tive que me preocupar com performance, evitar requisições duplicadas e ainda manter a experiência fluida. No final, ficou bem satisfatório.
 
-**Componentes:**
+Também foi minha primeira vez usando ShadCN UI de forma mais profunda. A liberdade de ter os componentes no próprio projeto (em vez de um node_module) é ótima para customizar, mas exige um pouco mais de organização.
 
-- ✅ **Header** - Logo e botão do carrinho com contador de itens
-- ✅ **SearchBar** - Busca com debounce (500ms)
-- ✅ **MovieCard** - Card de filme com:
-  - Poster do filme
-  - Título e ano
-  - Avaliação (estrelas)
-  - Preço fictício
-  - Botão adicionar ao carrinho
-  - Botão de favoritar (coração)
-- ✅ **MovieGrid** - Grid responsivo de filmes
-- ✅ **Loading** - Estado de carregamento animado
+Se fosse fazer de novo, talvez consideraria usar React Query para gerenciar o cache das requisições - acabei fazendo um controle manual que funciona, mas poderia ser mais elegante.
 
-**Context API:**
+## 📝 Scripts disponíveis
 
-- ✅ **CartContext** - Gerenciamento do carrinho
-  - Adicionar item
-  - Remover item
-  - Atualizar quantidade
-  - Calcular total
-  - Persistência no localStorage
-- ✅ **FavoritesContext** - Gerenciamento de favoritos
-  - Adicionar/remover favorito
-  - Verificar se é favorito
-  - Persistência no localStorage
+```bash
+npm run dev          # Inicia servidor de desenvolvimento
+npm run build        # Gera build de produção
+npm run preview      # Preview do build de produção
+npm run lint         # Roda o linter
+npm test             # Roda os testes
+npm run test:watch   # Testes em modo watch
+npm run test:coverage # Relatório de cobertura
+```
 
-**Funcionalidades:**
+## 👨‍💻 Sobre
 
-- ✅ Listagem de filmes populares
-- ✅ Busca de filmes em tempo real
-- ✅ Sistema de favoritos
-- ✅ Adicionar filmes ao carrinho
-- ✅ Contador de itens no carrinho
-- ✅ Responsividade completa (mobile, tablet, desktop)
-- ✅ Animações suaves
-- ✅ Loading states
-- ✅ Tratamento de erros
+Projeto desenvolvido como teste técnico para vaga de desenvolvedor front-end, mas acabou virando um bom estudo de caso de como estruturar uma aplicação React moderna.
 
-### Serviço ViaCEP
-
-**Funções disponíveis:**
-
-- `buscarCEP(cep)` - Busca endereço por CEP
-
-## 🐛 Troubleshooting
-
-### Erro: "API Key inválida"
-- Verifique se copiou a API Key corretamente no arquivo `.env`
-- Certifique-se de que está usando a API Key v3 (não v4)
-- Reinicie o servidor de desenvolvimento após alterar o `.env`
-
-### Erro: "CORS"
-- Não deve ocorrer pois a API TMDb permite CORS
-- Se ocorrer, verifique se a URL base está correta
-
-### Erro: "Cannot find module"
-- Execute `npm install` novamente
-- Verifique se o Node.js está atualizado
-
-## 📝 Próximas Etapas
-
-- [ ] Fase 4: Carrinho Lateral
-  - [ ] Sidebar que abre/fecha
-  - [ ] Lista de itens
-  - [ ] Alterar quantidade
-  - [ ] Remover itens
-  - [ ] Cálculo de totais
-  - [ ] Botão finalizar compra
-  - [ ] Animações slide
-- [ ] Fase 5: Sistema de Favoritos (já implementado parcialmente)
-- [ ] Fase 6: Checkout
-- [ ] Fase 7: Modal de Sucesso
-- [ ] Fase 8: Polimento e Deploy
-
-## 👨‍💻 Desenvolvimento
-
-Desenvolvido como parte do teste técnico para a vaga de Desenvolvedor Front-end na DOT Digital Group.
+Todas as funcionalidades propostas foram implementadas e ainda adicionei algumas extras (como o infinite scroll e os testes automatizados).
 
 ---
 
-**Data:** 16 de outubro de 2025  
-**Status:** Em Desenvolvimento 🚧
+**Desenvolvido por:** Ícaro Costa  
+**Data:** Outubro de 2025  
+**Status:** ✅ Finalizado  
+**Contexto:** Teste técnico + Projeto de estudos
 
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
